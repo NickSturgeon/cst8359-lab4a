@@ -1,0 +1,41 @@
+@using System.Linq
+@model System.Collections.Generic.IEnumerable<Lab4.Models.Movie>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h2>Home</h2>
+@if (Model == null || !Model.Any())
+{
+    <p class="center">Currently, there are no models in the database.</p>
+}
+else
+{
+    <table class="full center">
+        <tr>
+            <th>Options</th>
+            <th>Movie Title</th>
+            <th>Movie SubTitle</th>
+            <th>Description</th>
+            <th>Year</th>
+            <th>Rating</th>
+        </tr>
+    @foreach (var movie in Model)
+    {
+        <tr>
+            <td>
+                <a asp-controller="Home" asp-action="EditMovie" asp-route-id="@movie.MovieId">Edit</a>
+                <br/>
+                <br/>
+                <a onclick="return confirm('Are you sure?');" asp-controller="Home" asp-action="DeleteMovie" asp-route-id="@movie.MovieId">Delete</a>
+            </td>
+            <td>@movie.Title</td>
+            <td>@movie.SubTitle</td>
+            <td>@movie.Description</td>
+            <td>@movie.Year</td>
+            <td>@movie.Rating/5</td>
+        </tr>
+    }
+    </table>
+}

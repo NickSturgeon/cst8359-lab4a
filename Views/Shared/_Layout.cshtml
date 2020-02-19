@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Lab 4 - @ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/main.css"/>
+</head>
+<body>
+<header>
+    <h3>Movies Database</h3>
+    <a asp-controller="Home" asp-action="Index">Home</a>
+    &nbsp;
+    <a asp-controller="Home" asp-action="AddMovie">Add Movie</a>
+</header>
+<main>
+    <div>
+        @RenderBody()
+    </div>
+</main>
+<footer>
+    &copy; @(DateTime.Today.Year) - Nicholas Sturgeon
+</footer>
+</body>
+</html>

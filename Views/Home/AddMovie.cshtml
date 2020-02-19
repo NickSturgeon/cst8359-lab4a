@@ -1,0 +1,37 @@
+@model Lab4.Models.Movie
+
+@{
+    ViewData["Title"] = "Add Movie";
+}
+
+<h2>Add Movie</h2>
+<form asp-controller="Home" asp-action="CreateMovie" method="post">
+    <table>
+        <tr>
+            <td><label asp-for="Title"></label></td>
+            <td><input asp-for="Title"/></td>
+        </tr>
+        <tr>
+            <td><label asp-for="SubTitle"></label></td>
+            <td><input asp-for="SubTitle"/></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Description"></label></td>
+            <td><input asp-for="Description"/></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Year"></label></td>
+            <td><input asp-for="Year"/></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Rating"></label></td>
+            <td><input asp-for="Rating"/></td>
+        </tr>
+    </table>
+    <br/>
+    <br/>
+    <input type="submit" value="Add Movie"/>
+</form>
+<br/>
+<br/>
+<br/>
