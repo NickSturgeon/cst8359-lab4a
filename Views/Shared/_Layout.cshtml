@@ -4,22 +4,35 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Lab 4 - @ViewData["Title"]</title>
-    <link rel="stylesheet" href="~/main.css"/>
+    <link rel="stylesheet" href="~/bootstrap/css/bootstrap.min.css"/>
+    <script defer src="~/bootstrap/js/jquery.min.js"></script>
+    <script defer src="~/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-<header>
-    <h3>Movies Database</h3>
-    <a asp-controller="Home" asp-action="Index">Home</a>
-    &nbsp;
-    <a asp-controller="Home" asp-action="AddMovie">Add Movie</a>
-</header>
+<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+    <div class="container">
+        <a asp-controller="Home" asp-action="Index" class="navbar-brand">Movies Database</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a asp-controller="Home" asp-action="AddMovie" class="nav-link">Add Movie</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <main>
-    <div>
+    <div class="container">
         @RenderBody()
     </div>
 </main>
-<footer>
-    &copy; @(DateTime.Today.Year) - Nicholas Sturgeon
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">&copy; @(DateTime.Today.Year) - Nicholas Sturgeon</p>
+    </div>
 </footer>
 </body>
 </html>

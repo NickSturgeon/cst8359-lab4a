@@ -4,33 +4,34 @@
     ViewData["Title"] = "Add Movie";
 }
 
-<h2>Add Movie</h2>
+<div class="mt-5">
+    <h2>Add Movie</h2>
+</div>
+<hr/>
+
 <form asp-controller="Home" asp-action="CreateMovie" method="post">
-    <table>
-        <tr>
-            <td><label asp-for="Title"></label></td>
-            <td><input asp-for="Title"/></td>
-        </tr>
-        <tr>
-            <td><label asp-for="SubTitle"></label></td>
-            <td><input asp-for="SubTitle"/></td>
-        </tr>
-        <tr>
-            <td><label asp-for="Description"></label></td>
-            <td><input asp-for="Description"/></td>
-        </tr>
-        <tr>
-            <td><label asp-for="Year"></label></td>
-            <td><input asp-for="Year"/></td>
-        </tr>
-        <tr>
-            <td><label asp-for="Rating"></label></td>
-            <td><input asp-for="Rating"/></td>
-        </tr>
-    </table>
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="SubTitle"></label>
+        <input asp-for="SubTitle" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control" rows="10"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="Year"></label>
+        <input asp-for="Year" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Rating"></label>
+        <input asp-for="Rating" class="form-control"/>
+    </div>
     <br/>
-    <br/>
-    <input type="submit" value="Add Movie"/>
+    <input type="submit" value="Add Movie" class="btn btn-secondary"/>
 </form>
 <br/>
 <br/>
